@@ -1,0 +1,148 @@
+{
+  "version": "16.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "MyWidgetServiceStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MyWidgetServiceStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MyWidgetServiceStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "MyWidgetServiceStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/8288acd3c4e9c250de8944bee95163e587d0819fffe922860ee3cdf3f5e03104.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MyWidgetServiceStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MyWidgetServiceStack.assets"
+      ],
+      "metadata": {
+        "/MyWidgetServiceStack/Widgets/WidgetStore/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetsWidgetStore0ED7FDB7"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/WidgetHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetsWidgetHandlerServiceRole8C2B589C"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/WidgetHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetsWidgetHandlerServiceRoleDefaultPolicyA8E097C8"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/WidgetHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetsWidgetHandler1BC9DB34"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Widgetswidgetsapi72353315"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiCloudWatchRole8C2A5801"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiAccountDA847A77"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiDeployment406A9BD65d7c17b9a2a931c608315636705b0177"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiDeploymentStageprod0D8CD1B7"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiEndpoint5B785C68"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/GET/ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiGETApiPermissionMyWidgetServiceStackWidgetswidgetsapi6BAE39EFGETFA317FE0"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/GET/ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiGETApiPermissionTestMyWidgetServiceStackWidgetswidgetsapi6BAE39EFGETD6697AB5"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiGET2086C825"
+          }
+        ],
+        "/MyWidgetServiceStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/MyWidgetServiceStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/MyWidgetServiceStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MyWidgetServiceStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MyWidgetServiceStack"
+    }
+  }
+}
