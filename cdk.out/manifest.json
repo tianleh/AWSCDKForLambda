@@ -23,7 +23,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/8288acd3c4e9c250de8944bee95163e587d0819fffe922860ee3cdf3f5e03104.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4ac6d950a5808fae0737773db54d705d25d5feb293c45a4e6b434d860991cab4.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -84,7 +84,7 @@
         "/MyWidgetServiceStack/Widgets/widgets-api/Deployment/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "WidgetswidgetsapiDeployment406A9BD65d7c17b9a2a931c608315636705b0177"
+            "data": "WidgetswidgetsapiDeployment406A9BD66039252bdc49ee37076fc3c8f3a2eed8"
           }
         ],
         "/MyWidgetServiceStack/Widgets/widgets-api/DeploymentStage.prod/Resource": [
@@ -115,6 +115,66 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "WidgetswidgetsapiGET2086C825"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidAA19CFA8"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/POST/ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidPOSTApiPermissionMyWidgetServiceStackWidgetswidgetsapi6BAE39EFPOSTid9DF97A7A"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/POST/ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidPOSTApiPermissionTestMyWidgetServiceStackWidgetswidgetsapi6BAE39EFPOSTidF1C29E62"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidPOST60B9DB49"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/GET/ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidGETApiPermissionMyWidgetServiceStackWidgetswidgetsapi6BAE39EFGETid8E6C9CDF"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/GET/ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidGETApiPermissionTestMyWidgetServiceStackWidgetswidgetsapi6BAE39EFGETid5E1031AB"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidGETABE1C648"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/DELETE/ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidDELETEApiPermissionMyWidgetServiceStackWidgetswidgetsapi6BAE39EFDELETEid2BAC56B6"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/DELETE/ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidDELETEApiPermissionTestMyWidgetServiceStackWidgetswidgetsapi6BAE39EFDELETEid4096AFEF"
+          }
+        ],
+        "/MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WidgetswidgetsapiidDELETEE81619C6"
           }
         ],
         "/MyWidgetServiceStack/CDKMetadata/Default": [

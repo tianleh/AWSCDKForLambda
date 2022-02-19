@@ -202,7 +202,7 @@
                           "s3Bucket": {
                             "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
                           },
-                          "s3Key": "7798405135d0620ba83a25b4f75d6cae26873eb7e45a79912d2d41e7815d603f.zip"
+                          "s3Key": "fed1efa77990b880c2ce2b09f6b9ed28263a91ef1a4c0b3d9fae72747e90c650.zip"
                         },
                         "role": {
                           "Fn::GetAtt": [
@@ -360,7 +360,7 @@
                               "Ref": "Widgetswidgetsapi72353315"
                             },
                             "deploymentId": {
-                              "Ref": "WidgetswidgetsapiDeployment406A9BD65d7c17b9a2a931c608315636705b0177"
+                              "Ref": "WidgetswidgetsapiDeployment406A9BD66039252bdc49ee37076fc3c8f3a2eed8"
                             },
                             "stageName": "prod"
                           }
@@ -543,6 +543,495 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                          "version": "2.12.0"
+                        }
+                      },
+                      "{id}": {
+                        "id": "{id}",
+                        "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ApiGateway::Resource",
+                              "aws:cdk:cloudformation:props": {
+                                "parentId": {
+                                  "Fn::GetAtt": [
+                                    "Widgetswidgetsapi72353315",
+                                    "RootResourceId"
+                                  ]
+                                },
+                                "pathPart": "{id}",
+                                "restApiId": {
+                                  "Ref": "Widgetswidgetsapi72353315"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.CfnResource",
+                              "version": "2.12.0"
+                            }
+                          },
+                          "POST": {
+                            "id": "POST",
+                            "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/POST",
+                            "children": {
+                              "ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}": {
+                                "id": "ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/POST/ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "WidgetsWidgetHandler1BC9DB34",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "Widgetswidgetsapi72353315"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "WidgetswidgetsapiDeploymentStageprod0D8CD1B7"
+                                          },
+                                          "/POST/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.12.0"
+                                }
+                              },
+                              "ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}": {
+                                "id": "ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/POST/ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.POST..{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "WidgetsWidgetHandler1BC9DB34",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "Widgetswidgetsapi72353315"
+                                          },
+                                          "/test-invoke-stage/POST/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.12.0"
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/POST/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "POST",
+                                    "resourceId": {
+                                      "Ref": "WidgetswidgetsapiidAA19CFA8"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "Widgetswidgetsapi72353315"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "WidgetsWidgetHandler1BC9DB34",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                  "version": "2.12.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                              "version": "2.12.0"
+                            }
+                          },
+                          "GET": {
+                            "id": "GET",
+                            "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/GET",
+                            "children": {
+                              "ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}": {
+                                "id": "ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/GET/ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "WidgetsWidgetHandler1BC9DB34",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "Widgetswidgetsapi72353315"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "WidgetswidgetsapiDeploymentStageprod0D8CD1B7"
+                                          },
+                                          "/GET/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.12.0"
+                                }
+                              },
+                              "ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}": {
+                                "id": "ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/GET/ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.GET..{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "WidgetsWidgetHandler1BC9DB34",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "Widgetswidgetsapi72353315"
+                                          },
+                                          "/test-invoke-stage/GET/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.12.0"
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/GET/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "GET",
+                                    "resourceId": {
+                                      "Ref": "WidgetswidgetsapiidAA19CFA8"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "Widgetswidgetsapi72353315"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "WidgetsWidgetHandler1BC9DB34",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                  "version": "2.12.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                              "version": "2.12.0"
+                            }
+                          },
+                          "DELETE": {
+                            "id": "DELETE",
+                            "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/DELETE",
+                            "children": {
+                              "ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}": {
+                                "id": "ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/DELETE/ApiPermission.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "WidgetsWidgetHandler1BC9DB34",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "Widgetswidgetsapi72353315"
+                                          },
+                                          "/",
+                                          {
+                                            "Ref": "WidgetswidgetsapiDeploymentStageprod0D8CD1B7"
+                                          },
+                                          "/DELETE/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.12.0"
+                                }
+                              },
+                              "ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}": {
+                                "id": "ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/DELETE/ApiPermission.Test.MyWidgetServiceStackWidgetswidgetsapi6BAE39EF.DELETE..{id}",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                                  "aws:cdk:cloudformation:props": {
+                                    "action": "lambda:InvokeFunction",
+                                    "functionName": {
+                                      "Fn::GetAtt": [
+                                        "WidgetsWidgetHandler1BC9DB34",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "principal": "apigateway.amazonaws.com",
+                                    "sourceArn": {
+                                      "Fn::Join": [
+                                        "",
+                                        [
+                                          "arn:",
+                                          {
+                                            "Ref": "AWS::Partition"
+                                          },
+                                          ":execute-api:",
+                                          {
+                                            "Ref": "AWS::Region"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "AWS::AccountId"
+                                          },
+                                          ":",
+                                          {
+                                            "Ref": "Widgetswidgetsapi72353315"
+                                          },
+                                          "/test-invoke-stage/DELETE/*"
+                                        ]
+                                      ]
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_lambda.CfnPermission",
+                                  "version": "2.12.0"
+                                }
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "MyWidgetServiceStack/Widgets/widgets-api/Default/{id}/DELETE/Resource",
+                                "attributes": {
+                                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                                  "aws:cdk:cloudformation:props": {
+                                    "httpMethod": "DELETE",
+                                    "resourceId": {
+                                      "Ref": "WidgetswidgetsapiidAA19CFA8"
+                                    },
+                                    "restApiId": {
+                                      "Ref": "Widgetswidgetsapi72353315"
+                                    },
+                                    "authorizationType": "NONE",
+                                    "integration": {
+                                      "type": "AWS_PROXY",
+                                      "uri": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":apigateway:",
+                                            {
+                                              "Ref": "AWS::Region"
+                                            },
+                                            ":lambda:path/2015-03-31/functions/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "WidgetsWidgetHandler1BC9DB34",
+                                                "Arn"
+                                              ]
+                                            },
+                                            "/invocations"
+                                          ]
+                                        ]
+                                      },
+                                      "integrationHttpMethod": "POST"
+                                    }
+                                  }
+                                },
+                                "constructInfo": {
+                                  "fqn": "aws-cdk-lib.aws_apigateway.CfnMethod",
+                                  "version": "2.12.0"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_apigateway.Method",
+                              "version": "2.12.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_apigateway.Resource",
                           "version": "2.12.0"
                         }
                       }
